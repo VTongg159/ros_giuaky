@@ -1,0 +1,412 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="full_carlike">
+
+<link name="base_footprint" />
+<joint name="base_footprint_joint" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <parent link="base_footprint" />
+  <child link="base_link" />
+</joint>
+
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.0985761744718087 -0.00259808420080723 0.0176745355124829" rpy="0 0 0" />
+      <mass value="0.619175318581968" />
+      <inertia ixx="0.00236904895728645" ixy="1.87262117300671E-06" ixz="2.99148431627734E-05" iyy="0.00661382955180671" iyz="1.64574674348154E-07" izz="0.00874166094718616" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://carlike/meshes/base_link.STL" /></geometry>
+      <material name=""><color rgba="1 0.47843137254902 0.0588235294117647 1" /></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.05" rpy="0 0 0" />
+      <geometry><mesh filename="package://carlike/meshes/base_link.STL" /></geometry>
+    </collision>
+  </link>
+
+  <link name="rear_left_wheel_link">
+    <inertial>
+      <origin xyz="1.09856949925824E-09 -0.00500000000798869 -7.24805632179581E-11" rpy="0 0 0" />
+      <mass value="0.150447286121887" />
+      <inertia ixx="9.70011540990868E-05" ixy="-2.19104495267192E-14" ixz="-4.39881255200189E-13" iyy="0.000174226789469056" iyz="6.0704036396661E-16" izz="9.70011487640564E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://carlike/meshes/rear_left_wheel_link.STL" /></geometry>
+      <material name=""><color rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" /></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5708 0 0" />
+      <geometry><cylinder radius="0.05" length="0.03" /></geometry>
+    </collision>
+  </link>
+  <joint name="rear_left_wheel_joint" type="continuous">
+    <origin xyz="0 0.15217 0.001028" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="rear_left_wheel_link" />
+    <axis xyz="0 1 0" />
+    <limit effort="10" velocity="20" />
+    <dynamics damping="0.1" friction="0.1" />
+  </joint>
+
+  <link name="rear_right_wheel_link">
+    <inertial>
+      <origin xyz="3.56030330217472E-10 0.00499999999201134 1.04180018778433E-09" rpy="0 0 0" />
+      <mass value="0.150447286121887" />
+      <inertia ixx="9.70011493469396E-05" ixy="-6.29121753671399E-15" ixz="1.72146502171937E-12" iyy="0.000174226789469056" iyz="-2.09965993122255E-14" izz="9.70011535162039E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://carlike/meshes/rear_right_wheel_link.STL" /></geometry>
+      <material name=""><color rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" /></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5708 0 0" />
+      <geometry><cylinder radius="0.05" length="0.03" /></geometry>
+    </collision>
+  </link>
+  <joint name="rear_right_wheel_joint" type="continuous">
+    <origin xyz="0 -0.15283 0.001028" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="rear_right_wheel_link" />
+    <axis xyz="0 1 0" />
+    <limit effort="10" velocity="20" />
+    <dynamics damping="0.1" friction="0.1" />
+  </joint>
+
+  <link name="left_steering_link">
+    <inertial>
+      <origin xyz="0.0235649154725535 0.0621268171806496 0.00743739240369706" rpy="0 0 0" />
+      <mass value="0.157697628583214" />
+      <inertia ixx="9.87513924207413E-05" ixy="-5.53710589508542E-07" ixz="-3.97812988850382E-08" iyy="0.000174547883682782" iyz="-1.38427621752629E-07" izz="9.89005752799692E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://carlike/meshes/left_steering_link.STL" /></geometry>
+      <material name=""><color rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" /></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><sphere radius="0.001" /></geometry>
+    </collision>
+  </link>
+  <joint name="left_steering_joint" type="revolute">
+    <origin xyz="0.245 0.082173 0.001028" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="left_steering_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-0.78" upper="0.5" effort="5" velocity="4" />
+  </joint>
+
+  <link name="front_left_wheel_link">
+    <inertial>
+      <origin xyz="2.14941594205709E-05 -0.00499995380789328 -1.09219455701748E-09" rpy="0 0 0" />
+      <mass value="0.150447286118026" />
+      <inertia ixx="9.70025759584323E-05" ixy="-3.31978963917285E-07" ixz="7.03155090577001E-13" iyy="0.000174225362321317" iyz="2.48594237366691E-14" izz="9.70011540439364E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://carlike/meshes/front_left_wheel_link.STL" /></geometry>
+      <material name=""><color rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" /></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5708 0 0" />
+      <geometry><cylinder radius="0.05" length="0.03" /></geometry>
+    </collision>
+  </link>
+  <joint name="front_left_wheel_joint" type="continuous">
+    <origin xyz="0.023606 0.068107 0.0" rpy="0 0 0" />
+    <parent link="left_steering_link" />
+    <child link="front_left_wheel_link" />
+    <axis xyz="0 1 0" />
+    <limit effort="10" velocity="20" />
+    <dynamics damping="0.0" friction="0.0" />
+  </joint>
+
+  <link name="right_steering_link">
+    <inertial>
+      <origin xyz="0.0223020760355138 -0.0630137194530653 0.0014999992434632" rpy="0 0 0" />
+      <mass value="0.157697628587074" />
+      <inertia ixx="9.88925630794857E-05" ixy="3.42903423066012E-06" ixz="2.70178984504541E-12" iyy="0.000174396770479924" iyz="-9.73364067925281E-14" izz="9.89105178325956E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://carlike/meshes/right_steering_link.STL" /></geometry>
+      <material name=""><color rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" /></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><sphere radius="0.001" /></geometry>
+    </collision>
+  </link>
+  <joint name="right_steering_joint" type="revolute">
+    <origin xyz="0.245 -0.087827 0.001028" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="right_steering_link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-0.5" upper="0.78" effort="5" velocity="4" />
+  </joint>
+
+  <link name="front_right_wheel_link">
+    <inertial>
+      <origin xyz="0.000210243399464599 0.00499557780770704 -7.92912575875437E-10" rpy="0 0 0" />
+      <mass value="0.150447286121887" />
+      <inertia ixx="9.71376944010619E-05" ixy="3.24437593288155E-06" ixz="2.70178984843354E-12" iyy="0.000174090246483507" iyz="-9.73364050984622E-14" izz="9.70011514476302E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://carlike/meshes/front_right_wheel_link.STL" /></geometry>
+      <material name=""><color rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" /></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5708 0 0" />
+      <geometry><cylinder radius="0.05" length="0.03" /></geometry>
+    </collision>
+  </link>
+  <joint name="front_right_wheel_joint" type="continuous">
+    <origin xyz="0.022119 -0.068991 0.0" rpy="0 0 0" />
+    <parent link="right_steering_link" />
+    <child link="front_right_wheel_link" />
+    <axis xyz="0 1 0" />
+    <limit effort="10" velocity="20" />
+    <dynamics damping="0.0" friction="0.0" />
+  </joint>
+
+  <link name="lidar_link">
+    <inertial>
+      <origin xyz="0.0011350507999303 -2.2511131771985E-06 -0.0190840596423332" rpy="0 0 0" />
+      <mass value="0.107160203030052" />
+      <inertia ixx="3.51423561268E-05" ixy="1.50390965509761E-08" ixz="7.50444951306358E-07" iyy="3.90380235168712E-05" iyz="-9.8686340676503E-09" izz="4.84500527226017E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://carlike/meshes/lidar_link.STL" /></geometry>
+      <material name=""><color rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" /></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://carlike/meshes/lidar_link.STL" /></geometry>
+    </collision>
+  </link>
+  <joint name="lidar_joint" type="fixed">
+    <origin xyz="0.18157 -0.0028273 0.071028" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="lidar_link" />
+  </joint>
+
+  <link name="camera_link">
+    <inertial>
+      <origin xyz="-0.00709799991400401 -5.55111512312578E-17 0" rpy="0 0 0" />
+      <mass value="0.0432770796326795" />
+      <inertia ixx="0.000109422781743848" ixy="5.14330125635068E-21" ixz="-6.7762635780344E-21" iyy="2.20822840510756E-06" iyz="9.52633907078873E-21" izz="0.000108655714342604" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://carlike/meshes/camera_link.STL" /></geometry>
+      <material name=""><color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" /></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://carlike/meshes/camera_link.STL" /></geometry>
+    </collision>
+  </link>
+  <joint name="camera_joint" type="fixed">
+    <origin xyz="0.315 -0.0028273 0.003528" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="camera_link" />
+  </joint>
+
+  <link name="arm_link1">
+    <inertial>
+      <origin xyz="0.040774716875621 -0.00755049354351917 0.0481515680266213" rpy="0 0 0" />
+      <mass value="0.0403539816339745" />
+      <inertia ixx="5.81781236422276E-05" ixy="5.43915905495608E-08" ixz="-4.22063809027212E-05" iyy="0.000102105539034016" iyz="5.2260499474059E-08" izz="4.40956916787048E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://carlike/meshes/arm_link1.STL" /></geometry>
+      <material name=""><color rgba="1 1 1 1" /></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://carlike/meshes/arm_link1.STL" /></geometry>
+    </collision>
+  </link>
+  <joint name="arm_joint1" type="revolute">
+    <origin xyz="0.059988 -0.012827 0.071886" rpy="0 0 3.1416" />
+    <parent link="base_link" />
+    <child link="arm_link1" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1.5" upper="0.87" effort="15" velocity="1.5" />
+  </joint>
+
+  <link name="arm_link2">
+    <inertial>
+      <origin xyz="0.0464180212158517 -0.00755748115764754 -0.0301340675582253" rpy="0 0 0" />
+      <mass value="0.0291575348019794" />
+      <inertia ixx="2.23524234159972E-05" ixy="5.68977420785463E-08" ixz="2.61179524075733E-05" iyy="6.83038421166921E-05" iyz="-3.23395943661976E-08" izz="4.60730493321112E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://carlike/meshes/arm_link2.STL" /></geometry>
+      <material name=""><color rgba="1 1 1 1" /></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://carlike/meshes/arm_link2.STL" /></geometry>
+    </collision>
+  </link>
+  <joint name="arm_joint2" type="revolute">
+    <origin xyz="0.084015 -0.005104 0.099199" rpy="0 0 0" />
+    <parent link="arm_link1" />
+    <child link="arm_link2" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1.57" upper="0.62" effort="15" velocity="1.5" />
+  </joint>
+
+  <link name="end_effector_link">
+    <inertial>
+      <origin xyz="0.00567933304777019 0.000323230704913718 -0.00114626471771576" rpy="0 0 0" />
+      <mass value="0.00887280293926091" />
+      <inertia ixx="4.30992784457751E-06" ixy="5.541915367406E-08" ixz="-3.78537520897982E-08" iyy="4.22899268083545E-06" iyz="-1.11598581251398E-08" izz="4.12995744920137E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://carlike/meshes/end_effector_link.STL" /></geometry>
+      <material name=""><color rgba="1 1 1 1" /></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://carlike/meshes/end_effector_link.STL" /></geometry>
+    </collision>
+  </link>
+  <joint name="end_effector_joint" type="fixed">
+    <origin xyz="0.12668 -0.0094069 -0.074338" rpy="0 0 0" />
+    <parent link="arm_link2" />
+    <child link="end_effector_link" />
+  </joint>
+
+ 
+  <ros2_control name="GazeboSimSystem" type="system">
+    <hardware>
+      <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+    </hardware>
+
+
+    <joint name="arm_joint1">
+      <command_interface name="position" />
+      <state_interface name="position" />
+    </joint>
+    <joint name="arm_joint2">
+      <command_interface name="position" />
+      <state_interface name="position" />
+    </joint>
+
+    <!-- Wheel and steering joints: state_interface only so JointStateBroadcaster can see them -->
+    <joint name="rear_left_wheel_joint"><state_interface name="position" /></joint>
+    <joint name="rear_right_wheel_joint"><state_interface name="position" /></joint>
+    <joint name="front_left_wheel_joint"><state_interface name="position" /></joint>
+    <joint name="front_right_wheel_joint"><state_interface name="position" /></joint>
+    <joint name="left_steering_joint"><state_interface name="position" /></joint>
+    <joint name="right_steering_joint"><state_interface name="position" /></joint>
+  </ros2_control>
+
+ 
+  <gazebo reference="lidar_link">
+    <sensor name="lidar_sensor" type="gpu_lidar">
+      <always_on>true</always_on>
+      <update_rate>10.0</update_rate>
+      <topic>/scan</topic>
+      <gz_frame_id>lidar_link</gz_frame_id>
+      <visualize>true</visualize>
+      <lidar>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <resolution>1.0</resolution>
+            <min_angle>-3.14159</min_angle>
+            <max_angle>3.14159</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.12</min>
+          <max>10.0</max>
+          <resolution>0.01</resolution>
+        </range>
+      </lidar>
+    </sensor>
+  </gazebo>
+
+  <gazebo reference="camera_link">
+    <sensor name="camera_sensor" type="camera">
+      <always_on>true</always_on>
+      <update_rate>30.0</update_rate>
+      <topic>/camera/image_raw</topic>
+      <gz_frame_id>camera_link</gz_frame_id>
+      <camera>
+        <horizontal_fov>1.047</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.1</near>
+          <far>100.0</far>
+        </clip>
+      </camera>
+    </sensor>
+  </gazebo>
+  
+  <gazebo>
+    <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <parameters>$(find carlike)/config/joint_controllers.yaml</parameters>
+    </plugin>
+
+    <plugin filename="gz-sim-pose-publisher-system" name="gz::sim::systems::PosePublisher">
+      <publish_link_pose>true</publish_link_pose>
+      <use_pose_vector_msg>true</use_pose_vector_msg>
+      <publish_nested_models>true</publish_nested_models>
+    </plugin>
+
+    <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
+      <joint_name>rear_left_wheel_joint</joint_name>
+      <joint_name>rear_right_wheel_joint</joint_name>
+      <joint_name>front_left_wheel_joint</joint_name>
+      <joint_name>front_right_wheel_joint</joint_name>
+      <joint_name>left_steering_joint</joint_name>
+      <joint_name>right_steering_joint</joint_name>
+      <joint_name>arm_joint1</joint_name>
+      <joint_name>arm_joint2</joint_name>
+    </plugin>
+
+    <plugin filename="gz-sim-ackermann-steering-system" name="gz::sim::systems::AckermannSteering">
+      <left_joint>rear_left_wheel_joint</left_joint>
+      <right_joint>rear_right_wheel_joint</right_joint>
+      <left_steering_joint>left_steering_joint</left_steering_joint>
+      <right_steering_joint>right_steering_joint</right_steering_joint>
+      <wheel_base>0.245</wheel_base>
+      <wheel_separation>0.305</wheel_separation>
+      <kingpin_width>0.170</kingpin_width>
+      <wheel_radius>0.05</wheel_radius>
+      <steering_limit>0.5</steering_limit>
+      <steer_p_gain>10.0</steer_p_gain>
+      <steer_i_gain>0.0</steer_i_gain>
+      <steer_d_gain>0.5</steer_d_gain>
+      <odom_publish_frequency>50</odom_publish_frequency>
+      <topic>/cmd_vel</topic>
+      <odom_topic>/odom</odom_topic>
+      <tf_topic>/tf</tf_topic>
+      <frame_id>odom</frame_id>
+      <child_frame_id>base_footprint</child_frame_id>
+    </plugin>
+  </gazebo>
+
+
+  <gazebo reference="rear_left_wheel_link"><mu1>1.0</mu1><mu2>1.0</mu2><minDepth>0.001</minDepth></gazebo>
+  <gazebo reference="rear_right_wheel_link"><mu1>1.0</mu1><mu2>1.0</mu2><minDepth>0.001</minDepth></gazebo>
+  <gazebo reference="front_left_wheel_link"><mu1>1.0</mu1><mu2>1.0</mu2><minDepth>0.001</minDepth></gazebo>
+  <gazebo reference="front_right_wheel_link"><mu1>1.0</mu1><mu2>1.0</mu2><minDepth>0.001</minDepth></gazebo>
+
+</robot>

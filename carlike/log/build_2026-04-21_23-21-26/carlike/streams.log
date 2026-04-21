@@ -1,0 +1,44 @@
+[0.011s] Invoking command in '/home/admin1/ros2_ws/build/carlike': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/admin1/turtlebot3_ws/install/turtlebot3_teleop:/home/admin1/turtlebot3_ws/install/turtlebot3_example:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/admin1/ros2_ws/build/carlike -- -j16 -l16
+[0.059s] Invoked command in '/home/admin1/ros2_ws/build/carlike' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/admin1/turtlebot3_ws/install/turtlebot3_teleop:/home/admin1/turtlebot3_ws/install/turtlebot3_example:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/admin1/ros2_ws/build/carlike -- -j16 -l16
+[0.070s] Invoking command in '/home/admin1/ros2_ws/build/carlike': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/admin1/turtlebot3_ws/install/turtlebot3_teleop:/home/admin1/turtlebot3_ws/install/turtlebot3_example:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/admin1/ros2_ws/build/carlike
+[0.079s] -- Install configuration: ""
+[0.079s] -- Execute custom install script
+[0.080s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/config/joint_controllers.yaml
+[0.080s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/launch/gz_robot.launch.py
+[0.080s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/meshes/arm_link1.STL
+[0.080s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/meshes/arm_link2.STL
+[0.080s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/meshes/base_link.STL
+[0.080s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/meshes/camera_link.STL
+[0.081s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/meshes/end_effector_link.STL
+[0.081s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/meshes/front_left_wheel_link.STL
+[0.081s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/meshes/front_right_wheel_link.STL
+[0.081s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/meshes/left_steering_link.STL
+[0.081s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/meshes/lidar_link.STL
+[0.081s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/meshes/rear_left_wheel_link.STL
+[0.081s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/meshes/rear_right_wheel_link.STL
+[0.081s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/meshes/right_steering_link.STL
+[0.081s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/rviz/robot.rviz
+[0.081s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/urdf/car_like_description.urdf
+[0.082s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/carlike_world/meshes/hexagon.dae
+[0.082s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/carlike_world/meshes/wall.dae
+[0.082s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/carlike_world/model-1_4.sdf
+[0.082s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/carlike_world/model.config
+[0.082s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/carlike_world/model.sdf
+[0.082s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/scripts/ackermann_teleop.py
+[0.082s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/carlike_world.world
+[0.082s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/ament_index/resource_index/package_run_dependencies/carlike
+[0.082s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/ament_index/resource_index/parent_prefix_path/carlike
+[0.082s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/environment/ament_prefix_path.sh
+[0.082s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/environment/ament_prefix_path.dsv
+[0.083s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/environment/path.sh
+[0.083s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/environment/path.dsv
+[0.083s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/local_setup.bash
+[0.083s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/local_setup.sh
+[0.083s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/local_setup.zsh
+[0.083s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/local_setup.dsv
+[0.083s] -- Symlinking: /home/admin1/ros2_ws/install/carlike/share/carlike/package.dsv
+[0.093s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/ament_index/resource_index/packages/carlike
+[0.094s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/cmake/carlikeConfig.cmake
+[0.094s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/cmake/carlikeConfig-version.cmake
+[0.094s] -- Up-to-date symlink: /home/admin1/ros2_ws/install/carlike/share/carlike/package.xml
+[0.096s] Invoked command in '/home/admin1/ros2_ws/build/carlike' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/admin1/turtlebot3_ws/install/turtlebot3_teleop:/home/admin1/turtlebot3_ws/install/turtlebot3_example:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/admin1/ros2_ws/build/carlike
