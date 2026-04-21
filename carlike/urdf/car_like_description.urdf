@@ -21,7 +21,7 @@
     </visual>
     <collision>
       <origin xyz="0 0 0.05" rpy="0 0 0" />
-      <geometry><mesh filename="package://carlike/meshes/base_link.STL" /></geometry>
+      <geometry><box size="0.05 0.05 0.05" /></geometry>
     </collision>
   </link>
 
@@ -186,7 +186,7 @@
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry><mesh filename="package://carlike/meshes/lidar_link.STL" /></geometry>
+      <geometry><box size="0.05 0.05 0.05" /></geometry>
     </collision>
   </link>
   <joint name="lidar_joint" type="fixed">
@@ -208,7 +208,7 @@
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry><mesh filename="package://carlike/meshes/camera_link.STL" /></geometry>
+      <geometry><box size="0.05 0.05 0.05" /></geometry>
     </collision>
   </link>
   <joint name="camera_joint" type="fixed">
@@ -230,7 +230,7 @@
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry><mesh filename="package://carlike/meshes/arm_link1.STL" /></geometry>
+      <geometry><box size="0.05 0.05 0.05" /></geometry>
     </collision>
   </link>
   <joint name="arm_joint1" type="revolute">
@@ -254,7 +254,7 @@
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry><mesh filename="package://carlike/meshes/arm_link2.STL" /></geometry>
+      <geometry><box size="0.05 0.05 0.05" /></geometry>
     </collision>
   </link>
   <joint name="arm_joint2" type="revolute">
@@ -278,7 +278,7 @@
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry><mesh filename="package://carlike/meshes/end_effector_link.STL" /></geometry>
+      <geometry><box size="0.05 0.05 0.05" /></geometry>
     </collision>
   </link>
   <joint name="end_effector_joint" type="fixed">
@@ -293,23 +293,67 @@
       <plugin>gz_ros2_control/GazeboSimSystem</plugin>
     </hardware>
 
-
     <joint name="arm_joint1">
       <command_interface name="position" />
-      <state_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
     </joint>
     <joint name="arm_joint2">
       <command_interface name="position" />
-      <state_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
     </joint>
 
-    <!-- Wheel and steering joints: state_interface only so JointStateBroadcaster can see them -->
-    <joint name="rear_left_wheel_joint"><state_interface name="position" /></joint>
-    <joint name="rear_right_wheel_joint"><state_interface name="position" /></joint>
-    <joint name="front_left_wheel_joint"><state_interface name="position" /></joint>
-    <joint name="front_right_wheel_joint"><state_interface name="position" /></joint>
-    <joint name="left_steering_joint"><state_interface name="position" /></joint>
-    <joint name="right_steering_joint"><state_interface name="position" /></joint>
+    <joint name="rear_left_wheel_joint">
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+    </joint>
+    <joint name="rear_right_wheel_joint">
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+    </joint>
+    <joint name="front_left_wheel_joint">
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+    </joint>
+    <joint name="front_right_wheel_joint">
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+    </joint>
+    <joint name="left_steering_joint">
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+    </joint>
+    <joint name="right_steering_joint">
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+    </joint>
   </ros2_control>
 
  
